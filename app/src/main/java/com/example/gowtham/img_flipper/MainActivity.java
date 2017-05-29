@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String s1 = ed1.getText().toString();
                 tv1.setText(s1);
+                //Gowthaman....
                 VF1.getCurrentView();
             }
         });
