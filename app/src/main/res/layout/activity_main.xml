@@ -18,6 +18,7 @@
             android:layout_height="match_parent">
 
             <ImageView
+                android:id="@+id/first_image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/apple"
@@ -84,12 +85,13 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="180dp"
-            android:layout_height="match_parent"
+            android:layout_height="120dp"
             android:orientation="vertical">
 
             <TextView
@@ -106,24 +108,16 @@
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp" />
-
-            <Button
-                android:id="@+id/bu1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:text="Check" />
         </LinearLayout>
 
         <View
             android:layout_width="2dp"
-            android:layout_height="200dp"
+            android:layout_height="150dp"
             android:background="#123"/>
 
         <LinearLayout
             android:layout_width="180dp"
-            android:layout_height="match_parent"
+            android:layout_height="120dp"
             android:layout_marginLeft="10dp"
             android:orientation="vertical">
 
@@ -142,20 +136,24 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp" />
 
-            <Button
-                android:id="@+id/bu2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:text="Check" />
         </LinearLayout>
     </LinearLayout>
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="vertical">
+    <Button
+        android:id="@+id/bu1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Check" />
     <TextView
         android:id="@+id/tv1"
         android:layout_width="200dp"
         android:layout_height="30dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp" />
+    </LinearLayout>
 </LinearLayout>
