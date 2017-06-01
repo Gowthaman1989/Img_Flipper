@@ -10,70 +10,86 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+import java.util.HashMap;
+
 public class MainActivity extends AppCompatActivity {
+    ViewFlipper viewFlipper;
     EditText ed1, ed2;
-    Button bu1, bu2, startImg, stopImg, previousImg, nextImg;
+    Button startImg, stopImg, previousImg, nextImg, check;
     TextView tv1;
-
-    String names[]={"apple","orange","banana","cherries","greenapple"};
-
+    int images[] = {R.drawable.apple, R.drawable.orange, R.drawable.banana, R.drawable.cherries, R.drawable.greenapple};
+    String fruits[] = {"Apple", "Orange", "Banana", "Cherries", "Greenapple"};
+    String getName;
+    HashMap<Integer, String> img = new HashMap();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final ViewFlipper VF1 = (ViewFlipper) findViewById(R.id.viewflipper1);
-        VF1.startFlipping();
-        VF1.setFlipInterval(500);
-        ed1 = (EditText) findViewById(R.id.ed1);
-        ed2 = (EditText) findViewById(R.id.ed2);
-        bu1 = (Button) findViewById(R.id.bu1);
-                tv1 = (TextView) findViewById(R.id.tv1);
+        viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper);
+        for (int i = 0; i < images.length; i++) {
+            setFlipperImage(images[i]);
+        }
+        final int currentIndex = viewFlipper.getDisplayedChild();
+        img.put(0, fruits[0]);
+        img.put(1, fruits[1]);
+        img.put(2, fruits[2]);
+        img.put(3, fruits[3]);
+        img.put(4, fruits[4]);
+        getName = img.get(currentIndex);
         startImg = (Button) findViewById(R.id.startImg);
         stopImg = (Button) findViewById(R.id.stopImg);
         nextImg = (Button) findViewById(R.id.nextImg);
-
-
         previousImg = (Button) findViewById(R.id.previousImg);
+        check = (Button) findViewById(R.id.check);
+        tv1 = (TextView) findViewById(R.id.tv1);
         startImg.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                VF1.startFlipping();
+                viewFlipper.startFlipping();
             }
         });
         stopImg.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                VF1.stopFlipping();
+                viewFlipper.stopFlipping();
 
             }
         });
         previousImg.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                VF1.showPrevious();
+                viewFlipper.showPrevious();
             }
         });
         nextImg.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                VF1.showNext();
+                viewFlipper.showNext();
             }
         });
-        bu1.setOnClickListener(new View.OnClickListener() {
-            @Override
+        check.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                String fruitName=ed1.getText().toString();
-            Toast.makeText(getApplicationContext(),""+names[2],Toast.LENGTH_LONG).show();
-                for(int i=0;i<names.length;i++)
-                {
-                    if(fruitName.equals(names[i]))
-                    {
-                        Toast.makeText(getApplicationContext(),"Correct!! good",Toast.LENGTH_LONG).show();
-                    }
-                    else
-                    {
-                        break;
+                String fruitName = ed1.getText().toString();
+                for (int i = 0; i < fruits.length; i++) {
+                    if (fruitName.equals(getName)) {
+                        Toast.makeText(getApplicationContext(), "Correct!! good" + currentIndex, Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Wrong!" + currentIndex, Toast.LENGTH_LONG).show();
                     }
                 }
-            }
+                            }
         });
 
     }
+
+    private void setFlipperImage(int image) {
+        ImageView img = new ImageView(getApplicationContext());
+        img.setBackgroundResource(image);
+        viewFlipper.addView(img);
+        viewFlipper.setAutoStart(true);
+        viewFlipper.setFlipInterval(1000);
+    }
+
 }
+
+
+
+
+
