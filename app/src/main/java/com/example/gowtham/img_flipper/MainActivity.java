@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < images.length; i++) {
             setFlipperImage(images[i]);
         }
-
+     //HashMap
         img.put(0, fruits[0]);
         img.put(1, fruits[1]);
         img.put(2, fruits[2]);
