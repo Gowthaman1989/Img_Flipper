@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     ViewFlipper viewFlipper;
     EditText ed1, ed2;
     Button startImg, stopImg, previousImg, nextImg, check;
-    TextView tv1;
+
     int images[] = {R.drawable.apple, R.drawable.orange, R.drawable.banana, R.drawable.cherries, R.drawable.greenapple};
     String fruits[] = {"Apple", "Orange", "Banana", "Cherries", "Greenapple"};
     String getName;
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         nextImg = (Button) findViewById(R.id.nextImg);
         previousImg = (Button) findViewById(R.id.previousImg);
         check = (Button) findViewById(R.id.check);
-        tv1 = (TextView) findViewById(R.id.tv1);
+
         startImg.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 viewFlipper.startFlipping();
@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         check.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 final int currentIndex = viewFlipper.getDisplayedChild();
+                Toast.makeText(MainActivity.this, "Checking current Index"+currentIndex, Toast.LENGTH_SHORT).show();
                 getName = img.get(currentIndex);
                 String fruitName = ed1.getText().toString();
                     if (fruitName.equals(getName)) {
