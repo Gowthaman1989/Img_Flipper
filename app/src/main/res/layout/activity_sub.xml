@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.gowtham.img_flipper.SubActivity">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="350dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="350dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="380dp"
+                android:layout_height="350dp" />
+            <!--<ImageView-->
+            <!--android:layout_width="380dp"-->
+            <!--android:layout_height="350dp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:src="@drawable/apple" />-->
+            <!--<ImageView-->
+            <!--android:layout_width="380dp"-->
+            <!--android:layout_height="350dp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:src="@drawable/banana" />-->
+            <!--<ImageView-->
+            <!--android:layout_width="380dp"-->
+            <!--android:layout_height="350dp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:src="@drawable/orange" />-->
+            <!--<ImageView-->
+            <!--android:layout_width="380dp"-->
+            <!--android:layout_height="350dp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:src="@drawable/chrries" />-->
+            <!--<ImageView-->
+            <!--android:layout_width="380dp"-->
+            <!--android:layout_height="350dp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:src="@drawable/greenapple" />-->
+        </LinearLayout>
+    </ScrollView>
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/appleButton"
+                android:layout_width="190dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:background="@drawable/apple"/>
+            <Button
+                android:id="@+id/bananaButton"
+                android:layout_width="190dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:background="@drawable/banana" />
+            <Button
+                android:id="@+id/orangeButton"
+                android:layout_width="190dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:background="@drawable/orange" />
+            <Button
+                android:id="@+id/cherriesButton"
+                android:layout_width="190dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:background="@drawable/cherries" />
+            <Button
+                android:id="@+id/greenappleButton"
+                android:layout_width="190dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:background="@drawable/greenapple" />
+        </LinearLayout>
+    </HorizontalScrollView>
+</LinearLayout>

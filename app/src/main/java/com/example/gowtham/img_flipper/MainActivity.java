@@ -1,5 +1,6 @@
 package com.example.gowtham.img_flipper;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +16,7 @@ import java.util.HashMap;
 public class MainActivity extends AppCompatActivity {
     ViewFlipper viewFlipper;
     EditText ed1, ed2;
-    Button startImg, stopImg, previousImg, nextImg, check;
+    Button startImg, stopImg, previousImg, nextImg, check,  flowersButton;
 
     int images[] = {R.drawable.apple, R.drawable.orange, R.drawable.banana, R.drawable.cherries, R.drawable.greenapple};
     String fruits[] = {"Apple", "Orange", "Banana", "Cherries", "Greenapple"};
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         nextImg = (Button) findViewById(R.id.nextImg);
         previousImg = (Button) findViewById(R.id.previousImg);
         check = (Button) findViewById(R.id.check);
+        flowersButton = (Button) findViewById(R.id.flowersButton);
 
         startImg.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -62,6 +64,15 @@ public class MainActivity extends AppCompatActivity {
         nextImg.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 viewFlipper.showNext();
+            }
+        });
+
+        flowersButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+//                Intent flower = new Intent(getApplicationContext(), SubActivity.class);
+//            startActivity(flower);
+                startActivity(new Intent(getApplicationContext(),SubActivity.class));
             }
         });
         check.setOnClickListener(new View.OnClickListener() {

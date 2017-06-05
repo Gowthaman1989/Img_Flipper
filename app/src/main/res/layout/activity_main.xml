@@ -118,5 +118,12 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:text="Check" />
+        <Button
+            android:id="@+id/flowersButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="280dp"
+            android:background="#efe445"
+            android:text="Flowers" />
         </LinearLayout>
 </LinearLayout>
