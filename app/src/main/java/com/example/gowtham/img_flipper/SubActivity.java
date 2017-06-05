@@ -21,6 +21,7 @@ public class SubActivity extends AppCompatActivity {
         orangeButton = (Button) findViewById(R.id.orangeButton);
         cherriesButton = (Button) findViewById(R.id.cherriesButton);
         greenappleButton = (Button) findViewById(R.id.greenappleButton);
+
         appleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

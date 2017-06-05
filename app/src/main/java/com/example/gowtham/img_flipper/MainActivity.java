@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         nextImg = (Button) findViewById(R.id.nextImg);
         previousImg = (Button) findViewById(R.id.previousImg);
         check = (Button) findViewById(R.id.check);
-        flowersButton = (Button) findViewById(R.id.flowersButton);
+//        flowersButton = (Button) findViewById(R.id.flowersButton);
 
         startImg.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -67,19 +67,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        flowersButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-//                Intent flower = new Intent(getApplicationContext(), SubActivity.class);
-//            startActivity(flower);
-                startActivity(new Intent(getApplicationContext(),SubActivity.class));
-            }
-        });
+//        flowersButton.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v) {
+////                Intent flower = new Intent(getApplicationContext(), SubActivity.class);
+////            startActivity(flower);
+//                startActivity(new Intent(getApplicationContext(),SubActivity.class));
+//            }
+//        });
         check.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 final int currentIndex = viewFlipper.getDisplayedChild();
                 Toast.makeText(MainActivity.this, "Checking current Index"+currentIndex, Toast.LENGTH_SHORT).show();
                 getName = img.get(currentIndex);
+                Toast.makeText(MainActivity.this, "Current index "+getName, Toast.LENGTH_SHORT).show();
                 String fruitName = ed1.getText().toString();
                     if (fruitName.equals(getName)) {
                         Toast.makeText(getApplicationContext(), "Correct!! good" + currentIndex, Toast.LENGTH_LONG).show();
